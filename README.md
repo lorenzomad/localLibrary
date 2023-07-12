@@ -1,2 +1,2 @@
 # nodeBackend
-node js backend 
+node js backend written in express framework
