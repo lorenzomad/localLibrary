@@ -6,8 +6,19 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+const password = process.env.PASSWORD
 
 var app = express();
+console.log(password)
+const mongoose = require('mongoose');
+const { Console } = require('console');
+mongoose.set("strictQuery", false)
+const mongoDB= `mongodb+srv://lorenzomaddalena1:${password}@cluster0.oudqq8s.mongodb.net/local_library?retryWrites=true&w=majority`
+console.log (mongoDB)
+main().catch((err) => console.log(err));
+async function main() {
+  await mongoose.connect(mongoDB);
+}
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
