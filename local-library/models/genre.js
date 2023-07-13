@@ -10,4 +10,4 @@ genreSchema.virtual('url').get( () => {
     return `/genre/${this.id}`; 
 })
 
-module.exports(mongoose.model("Genre", genreSchema))
+module.exports = mongoose.model("Genre", genreSchema)

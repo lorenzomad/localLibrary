@@ -4,15 +4,15 @@ const Schema  = mongoose.Schema
 
 const authorSchema = new Schema({
     first_name: {type: String, required: true, maxLength: 100},
-    last_name: {type: String, required: true, maxLength: 100},
+    family_name: {type: String, required: true, maxLength: 100},
     date_of_birth: {type: Date},
     date_of_death: { type: Date}
 })
 
 authorSchema.virtual("name").get(function() {
     let fullname = ''
-    if (this.first_name && this.last_name) {
-        fullname = `${this.first_name} ${this.last_name}`
+    if (this.first_name && this.family_name) {
+        fullname = `${this.first_name} ${this.family_name}`
     }
 
     return fullname
