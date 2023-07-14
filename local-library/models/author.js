@@ -18,7 +18,7 @@ authorSchema.virtual("name").get(function() {
     return fullname
 })
 
-authorSchema.virtual('url').get( () => {
+authorSchema.virtual('url').get( function () {
     return `/catalog/author/${this.id}`; 
 
 })
